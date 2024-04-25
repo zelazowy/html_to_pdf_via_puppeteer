@@ -4,7 +4,9 @@ const puppeteer = require('puppeteer');
 
 (async () => {
     const website_url = process.argv[2];
-    const savePath = 'output/' + Date.now() + '.png';
+    const filename = new URL(website_url).hostname;
+    const now_string = new Date().toISOString();
+    const savePath = 'output/' + filename + '_' + now_string + '.png';
 
     // Create a browser instance
     const browser = await puppeteer.launch();

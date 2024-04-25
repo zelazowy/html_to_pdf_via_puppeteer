@@ -14,6 +14,8 @@ const puppeteer = require('puppeteer');
     // Create a new page
     const page = await browser.newPage();
 
+    await page.setViewport({ width: 1200, height: 800 });
+
     // Open URL in current page
     await page.goto(website_url, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
